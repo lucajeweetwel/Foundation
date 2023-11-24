@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="mystyles.css">
+    <link rel="stylesheet" href="mystyles.css.map">
+    <title>Foundation</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Aanpassingen voor het verkleinen en naast elkaar plaatsen van diagrammen */
+        #Diagram {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        canvas {
+            max-width: 200px; /* Pas de breedte aan zoals gewenst */
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="large-flex-container">
+<div>
+    <div class="app-dashboard-sidebar-inner" id="sidebar">
+        <img src="../logo_white.png" alt="foto" id="logo">
+        <ul class="menu vertical">
+          <li><a href="#" class="is-active">
+            <i class="fa-sharp fa-solid fa-house"></i><span id="textnavbar" class="app-dashboard-sidebar-text">Home </span>
+          </a></li>
+          <li><a>
+            <i class="fa-sharp fa-solid fa-earth-americas"></i><span id="textnavbar" class="app-dashboard-sidebar-text">Universe</span>
+          </a></li>
+          <li><a href="#" class="is-active">
+            <i class="fa-sharp fa-solid fa-star-half-stroke"></i><span id="textnavbar" class="app-dashboard-sidebar-text">Reviews</span>
+          </a></li>
+          <li><a>
+            <i class="fa-sharp fa-solid fa-trophy"></i><span id="textnavbar" class="app-dashboard-sidebar-text">Badges</span>
+          </a></li>
+          <li><a>
+            <i class="fa-sharp fa-solid fa-comments"></i><span id="textnavbar" class="app-dashboard-sidebar-text">1:1's</span>
+          </a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+
+
+<main class="large-flex-container" id="main">
+    <div class="">
+        <div class="">
+            <img src="profiel.jpg" alt="profiel" width="150" width="150" id="profiel" class="">
+            <div class="flex-dir-row" >
+            <h1 id="naam">Jandinie Gambela</h1>
+            <div id="profielnaam" class="large-flex-container">
+                <h3>School: Horizon College</h3>
+            </div>
+            </div>
+        </div>
+        <div>
+            <button class="" id="knopprofiel">
+                Vieuw full profile
+            </button>
+        </div>
+    </div>
+
+
+    <div id="Diagram">
+        <canvas id="pieChart" width="200" height="200"></canvas>
+
+            <!-- Staafdiagram -->
+            <canvas id="barChart" width="200" height="200"></canvas>
+
+            <!-- Lijndiagram -->
+            <canvas id="lineChart" width="200" height="200"></canvas>
+    </div>
+
+
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Naam</th>
+                <th>Recente activiteit</th>
+                <th>status</th>
+            </tr>
+            <tr>
+                <td>
+                    Tailwind css
+                </td>
+                <td>
+                    5 uur geleden
+                </td>
+                <td>
+                    Nog niet gereviewd
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tailwind css
+                </td>
+                <td>
+                    5 uur geleden
+                </td>
+                <td>
+                    Nog niet gereviewd
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tailwind css
+                </td>
+                <td>
+                    5 uur geleden
+                </td>
+                <td>
+                    Nog niet gereviewd
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Tailwind css
+                </td>
+                <td>
+                    5 uur geleden
+                </td>
+                <td>
+                    Nog niet gereviewd
+                </td>
+            </tr>
+        </tbody>
+        <Button id="knopdata">
+            <a href="form.html">Voeg Data toe</a>
+        </Button>
+    </table>
+</div>
+
+
+      
+</main>
+    <script>
+        var pieChartCtx = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(pieChartCtx, {
+            type: 'pie',
+            data: {
+                labels: ['HTML', 'CSS', 'JS'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['red', 'green', 'blue']
+                }]
+            }
+        });
+
+        var barChartCtx = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(barChartCtx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML', 'CSS', 'JS'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    backgroundColor: ['orange', 'purple', 'yellow']
+                }]
+            }
+        });
+
+        var lineChartCtx = document.getElementById('lineChart').getContext('2d');
+        var lineChart = new Chart(lineChartCtx, {
+            type: 'line',
+            data: {
+                labels: ['HTML', 'CSS', 'JS'],
+                datasets: [{
+                    data: [50, 30, 20],
+                    borderColor: 'red',
+                    fill: false
+                }]
+            }
+        });
+    </script>
+
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
